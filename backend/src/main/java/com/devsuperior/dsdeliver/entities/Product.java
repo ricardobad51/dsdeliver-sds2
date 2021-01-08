@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name= "td_product")
+@Table(name= "tb_product")
 public class Product implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -23,7 +23,8 @@ public class Product implements Serializable{
 	private String description;
 	private String imageUri;
 	
-	public Product(){}
+	public Product(){
+	}
 
 
 	public Product(Long id, String name, Double price, String description, String imageUri) {

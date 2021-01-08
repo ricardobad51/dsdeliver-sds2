@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name= "td_order")
+@Table(name= "tb_order")
 public class Order implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -35,11 +35,11 @@ public class Order implements Serializable{
 	@ManyToMany
 	@JoinTable(name="tb_order_product",
 		joinColumns = @JoinColumn(name = "order_id"),
-		inverseJoinColumns = @JoinColumn(name= "order_id")
-			)
+		inverseJoinColumns = @JoinColumn(name= "product_id"))
 	private Set<Product> products = new HashSet<>();
 	
-	public Order() {}
+	public Order(){
+	}
 
 	public Order(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatus status) {
 		super();
